@@ -1,11 +1,13 @@
 import { Router } from 'express';
+import dotenv from 'dotenv';
 import bcrypt from 'bcryptjs';
-
 import jwt from 'jsonwebtoken';
-import auth from '../../middleware/auth.js';
 
+import auth from '../../middleware/auth.js';
 // User Model
 import User from '../../models/User.js';
+
+dotenv.config({path:'./config.env'});   //Importing environment variable from file
 
 const JWT_SECRET= process.env.JWT_SECRET;
 const router = Router();
@@ -44,6 +46,7 @@ router.post('/login', async (req, res) => {
       }
     });
   } catch (e) {
+    // console.log("Login Error is being thrown with " + JWT_SECRET);
     res.status(400).json({ msg: e.message });
   }
 });
@@ -94,6 +97,7 @@ router.post('/register', async (req, res) => {
       }
     });
   } catch (e) {
+    // console.log("Error is being thrown with " + JWT_SECRET);
     res.status(400).json({ error: e.message });
   }
 });
