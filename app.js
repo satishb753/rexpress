@@ -1,12 +1,15 @@
 import express from 'express'; //Server
 import dotenv from 'dotenv'; //Using to save environment variables inside process.env
-import morgan from 'morgan'; //Logger
+// import morgan from 'morgan'; //Logger
 import mongoose from 'mongoose';    //For Mongo DB connection
+import path from 'path'; //Native
 
 //Routes
 import authRoutes from "./routes/api/auth.js";
 
 dotenv.config({path:'./config.env'});   //Importing environment variable from file
+
+const __dirname = path.resolve();
 
 
 //Mongo DB connection string
@@ -28,20 +31,21 @@ const app = express();
 app.use(express.json());
 
 
-app.get('/',(req,res)=>{
-    console.log("this is what will be outputted");
-    return  res.json({message:'This is what will be shown on the front page'});
-})
-
-app.use('/api/users', authRoutes);
+// app.get('/',(req,res)=>{
+//     res.sendFile(path.join(__dirname, 'build', 'index.html'));
+// })
 
 
+app.use(express.static("build"));
+app.use('/api/auth', authRoutes);
 
-if(process.env.NODE_ENV==="development"){
-    app.use(morgan('dev'));     // Logger Middleware ____ Used only inside development environment
-}
-else{
-    console.log('environment set to production');
-}
+
+
+// if(process.env.NODE_ENV==="development"){
+//     app.use(morgan('dev'));     // Logger Middleware ____ Used only inside development environment
+// }
+// else{
+//     console.log('environment set to production');
+// }
 
 export default app;

@@ -1,0 +1,40 @@
+{
+  "files": {
+    "main.css": "/static/css/main.30840d70.chunk.css",
+    "main.js": "/static/js/main.400bdd94.chunk.js",
+    "main.js.map": "/static/js/main.400bdd94.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.c0f181e9.js",
+    "runtime-main.js.map": "/static/js/runtime-main.c0f181e9.js.map",
+    "static/css/2.10daeff3.chunk.css": "/static/css/2.10daeff3.chunk.css",
+    "static/js/2.951f72c8.chunk.js": "/static/js/2.951f72c8.chunk.js",
+    "static/js/2.951f72c8.chunk.js.map": "/static/js/2.951f72c8.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.10daeff3.chunk.css.map": "/static/css/2.10daeff3.chunk.css.map",
+    "static/css/main.30840d70.chunk.css.map": "/static/css/main.30840d70.chunk.css.map",
+    "static/js/2.951f72c8.chunk.js.LICENSE.txt": "/static/js/2.951f72c8.chunk.js.LICENSE.txt",
+    "static/media/about-info.bb7bf531.jpg": "/static/media/about-info.bb7bf531.jpg",
+    "static/media/about-usbanner.c810473b.jpg": "/static/media/about-usbanner.c810473b.jpg",
+    "static/media/contactbanner.bc655707.jpg": "/static/media/contactbanner.bc655707.jpg",
+    "static/media/headbanner4.9eefa767.jpeg": "/static/media/headbanner4.9eefa767.jpeg",
+    "static/media/Hero.scss": "/static/media/hero-banner.156a39e5.jpg",
+    "static/media/MainBanner.scss": "/static/media/home_banner.bc87dcf7.jpg",
+    "static/media/images-2.bd37db21.jpg": "/static/media/images-2.bd37db21.jpg",
+    "static/media/products-banner.836a67ee.jpg": "/static/media/products-banner.836a67ee.jpg",
+    "static/media/shirt.69da17f6.jpg": "/static/media/shirt.69da17f6.jpg",
+    "static/media/shoes-banner.aad8ef6c.jpg": "/static/media/shoes-banner.aad8ef6c.jpg",
+    "static/media/shoes.9c6065e1.jpg": "/static/media/shoes.9c6065e1.jpg",
+    "static/media/slick-theme.css": "/static/media/slick.c94f7671.ttf",
+    "static/media/store-1.0591705a.jpg": "/static/media/store-1.0591705a.jpg",
+    "static/media/store-2.c527aa46.jpg": "/static/media/store-2.c527aa46.jpg",
+    "static/media/store-3.a0323969.jpg": "/static/media/store-3.a0323969.jpg",
+    "static/media/store-4.43878d9f.jpg": "/static/media/store-4.43878d9f.jpg",
+    "static/media/tshirt-banner.844e76be.jpg": "/static/media/tshirt-banner.844e76be.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c0f181e9.js",
+    "static/css/2.10daeff3.chunk.css",
+    "static/js/2.951f72c8.chunk.js",
+    "static/css/main.30840d70.chunk.css",
+    "static/js/main.400bdd94.chunk.js"
+  ]
+}
