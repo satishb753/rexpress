@@ -2,10 +2,13 @@
   "name": "rexpress",
   "version": "1.0.0",
   "description": "React and Express Project",
-  "main": "index.js",
+  "main": "server.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js --exec babel-node --presets babel-preset-env",
+    "build": "babel server.js -d dist",
+    "start": "node server.js --exec babel-node --presets babel-preset-env",
+    "start:dev": "nodemon server.js --exec babel-node --presets babel-preset-env",
     "start:prod": "set NODE_ENV=production && nodemon server.js --exec babel-node --presets babel-preset-env"
   },
   "repository": {
