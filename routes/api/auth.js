@@ -3,10 +3,14 @@ import dotenv from 'dotenv';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
-// import auth from '../../middleware/auth.js';
-import { protect, admin } from '../../middleware/authMiddleware.js';
+//authMiddleware
+import { protect } from '../../middleware/authMiddleware.js';
+
 // User Model
 import User from '../../models/User.js';
+
+//generateToken Function
+import generateToken from '../../utils/generateToken.js'
 
 dotenv.config({path:'./config.env'});   //Importing environment variable from file
 
@@ -38,14 +42,18 @@ router.post('/login', async (req, res) => {
     const token = jwt.sign({ id: user._id }, JWT_SECRET, { expiresIn: 3600 });
     if (!token) throw Error('Couldnt sign the token');
 
-    res.status(200).json({
-      token,
-      user: {
-        id: user._id,
+    if (user && (await user.matchPassword(password))) {
+      res.json({
+        _id: user._id,
         name: user.name,
-        email: user.email
-      }
-    });
+        email: user.email,
+        isAdmin: user.isAdmin,
+        token: generateToken(user._id),
+      })
+    } else {
+      res.status(401)
+      throw new Error('Invalid email or password')
+    }
   } catch (e) {
     // console.log("Login Error is being thrown with " + JWT_SECRET);
     res.status(400).json({ msg: e.message });
