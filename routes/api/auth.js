@@ -3,7 +3,8 @@ import dotenv from 'dotenv';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
-import auth from '../../middleware/auth.js';
+// import auth from '../../middleware/auth.js';
+import { protect, admin } from '../../middleware/authMiddleware.js';
 // User Model
 import User from '../../models/User.js';
 
@@ -108,7 +109,7 @@ router.post('/register', async (req, res) => {
  * @access  Private
  */
 
-router.get('/user', auth, async (req, res) => {
+router.get('/user', protect, async (req, res) => {
   try {
     const user = await User.findById(req.user.id).select('-password');
     if (!user) throw Error('User does not exist');

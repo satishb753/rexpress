@@ -48,7 +48,7 @@ router.post('/', auth, async (req, res) => {
 
 /**
  * @route   DELETE api/items/:id
- * @desc    Delete A Item
+ * @desc    Delete An Item
  * @access  Private
  */
 
